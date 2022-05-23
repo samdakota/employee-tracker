@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../../db/connection");
 
 // get all departments
-// function getDepartments() {
+function getDepartments() {
     router.get('/api/departments', (req, res) => {
         const sql = `SELECT * FROM departments`;
         db.query(sql, (err, rows) => {
@@ -17,7 +17,7 @@ const db = require("../../db/connection");
             });
         });
     });
-// };
+};
 
 // add department
 router.post('/api/department', ({ body }, res) => {
